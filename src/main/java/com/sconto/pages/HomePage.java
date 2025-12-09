@@ -1,12 +1,15 @@
 package com.sconto.pages;
 
 import com.codeborne.selenide.Selenide;
+import com.sconto.utils.PropertiesLoader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Selenide.$;
 
 public class HomePage {
+
+    public static String baseUrl = PropertiesLoader.loadProperty("url");
 
     @FindBy(css = "[data-accept-action='all']")
     WebElement acceptAll;

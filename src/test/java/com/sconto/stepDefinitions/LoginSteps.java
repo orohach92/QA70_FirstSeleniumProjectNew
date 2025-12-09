@@ -14,7 +14,7 @@ public class LoginSteps {
     @And("User enters valid data")
     public void user_enters_valid_data(){
         login = Selenide.page(LoginPage.class);
-        login.enterData("rohach.oleksandr@gmail.com","zw82A&usgNBkeW@");
+        login.enterData();
     }
 
     @And("User click on Anmelden button")
@@ -29,13 +29,13 @@ public class LoginSteps {
     }
     @Then("User verifies his name")
     public void verify_User_name(){
-        login.verifyName("Kristina Tomash");
+        login.verifyName();
     }
 
     @And("User enters invalid email and correct password")
     public void user_enters_invalid_email_and_correct_password(){
         login = Selenide.page(LoginPage.class);
-        login.enterData("wrong@gmail.com","zw82A&usgNBkeW@");
+        login.enterDataNegative("wrong@gmail.com","zw82A&usgNBkeW@");
     }
 
     @And("User click on Anmelden button Negative")
