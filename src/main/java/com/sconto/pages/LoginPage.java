@@ -43,4 +43,17 @@ public class LoginPage {
     public SelenideElement verifyName(String name) {
         return $(userNameTitle).shouldHave(text(name));
     }
+
+    public LoginPage clickOnAnmeldenNegative() {
+        $(loginSubmit).click();
+        return this;
+    }
+
+    @FindBy(css = "#loginEmail-error")
+    WebElement errorLoginMessage;
+
+    public LoginPage verifyLoginErrorMessage() {
+        $(errorLoginMessage).shouldHave(text("Benutzername nicht gefunden oder Passwort falsch."));
+        return this;
+    }
 }
